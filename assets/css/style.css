@@ -1,0 +1,376 @@
+body{
+    margin: 0px;          /* sin margenes a los lados */
+    font-family: 'Poppins', sans-serif; /* cuando no funciona la primera, se ocupa la segunda, sino la tercera. estos son los "fallbacks" */
+}
+body *{                 /* reseteo de etiquetas (*) significa todo, todas las etiquetas dentro de body */
+    margin: 0px;
+    border: 0px;        /* rich black hexadecimal #RRGGBB*/
+    padding: 0px;       /* sin margenes a los lados */
+}
+/*DEFINICION LAYOUT DEL GRID*/
+.cls-definicion-layout-grid {
+    display: grid;
+    height: auto; /*Todos los height de las areas, deben sumar el total del height del layout*/
+    grid-template-areas:
+        'nav nav'
+        'menu section'
+        'footer footer';
+    grid-template-columns: 1fr 6fr;
+}
+/* DEFINICION AREAS DEL LAYOUT DEL GRID */
+nav {
+    grid-area: nav;
+    background-color: #333333;
+    height:  auto; /*Todos los height de las areas, deben sumar el total del height del layout*/
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+menu {
+    grid-area: menu;
+    background-color:  #00599B;/*#FF9D00;*/
+    height: auto; /*Todos los height de las areas, deben sumar el total del height del layout*/
+}
+section {
+    grid-area: section;
+    background-color: white; /*gray;*/
+    height: auto; /*Todos los height de las areas, deben sumar el total del height del layout*/
+}
+
+footer {
+    grid-area: footer;
+    background-color:#00306C;
+    height: auto; /*Todos los height de las areas, deben sumar el total del height del layout*/
+}
+/*DEFINICION CLASES UTILIZADAS*/
+/* MENU */
+.cls-img-titulo-menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    padding:20px 0px 20px 0px;
+}
+.cls-tamannio-img-paleta-colores{
+    width: 100px;
+    height: 40px;
+    padding:10px 16px 10px 20px;
+}
+.cls-titulo-menu{
+    width:200px;
+    padding:14px 10px;
+    color:white
+}
+.cls-seccion-logo{
+    display:flex;
+}
+.cls-seccion-menu{
+    width:100%;
+}
+.cls-seccion-menu > ul{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    text-decoration:none;
+    list-style:none;
+    text-align:center;
+    padding:20px 16px;
+}
+.cls-seccion-menu > ul> li> a{
+    /* padding:14px 16px; */
+    font-size:17px;
+    text-decoration:none;
+    color:#f2f2f2;
+}
+.cls-icono-hamburguesa{
+    display:none;
+}
+.cls-display-item-menu>ul>li>a{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    font-size: 14px;
+    padding: 12px;
+    color:white;
+    text-decoration: none;
+}
+.cls-ubica-primer-item{
+    padding-top:50px;
+}
+.cls-espaciado-item-menu{
+    padding-bottom: 10px;
+}
+.cls-display-item-menu a:hover {
+    color:lightgray;
+}
+
+.cls-seccion-menu > ul> li> a:hover{
+    color:#FF9D00;
+}
+/* PRODUCTOS */
+.cls-grid-container-productos {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: white;
+    margin: 40px 30px 10px 30px;
+    padding: 0px 30px 0px 30px;
+}
+.cls-grid-container-productos > div {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+    font-size: 30px;
+}
+.cls-contenedor-card{
+    width: 250px;
+    height: 250px;
+    border-width: thin;
+    border-style: solid;
+    border-color:lightgray;
+    box-shadow: 2px 2px 4px 0px #888888; /*Borde a cards*/
+    border-radius: 5px;
+}
+.cls-tamannio-card{
+    width: 250px;
+    height: 250px;
+}
+.cls-formato-nombre-productos{
+    font-size: 14px;
+}
+.cls-color-nombre-producto{
+    color:#444449;
+}
+.cls-formato-precio-productos{
+    font-size: 12px;
+    font-weight: bold;
+}
+.cls-color-precio-producto{
+    color:#61646A;
+}
+.cls-formato-comprar{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    font-size: 12px;
+    width:100%;
+}
+.cls-color-comprar{
+    background: #00537B;
+    color:#FFFFFF;
+    padding: 4px 14px; /*tamannio de botones*/
+    cursor: pointer;
+}
+
+/* FOOTER */
+.cls-formato-footer{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#FFFFFF;
+}
+.cls-separacion-iconos-texto{
+    padding: 15px 0px 15px 0px;
+}
+.cls-separacion-iconos-texto>a>i{
+    color:white;
+    padding: 0px 10px 0px 10px;
+}
+.cls-texto-footer{
+    font-size: 16px;
+    padding: 0px 0px 10px 0px;
+}
+
+/* PAGINACION */
+.cls-alinear-numeracion{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px 0px 10px 0px;
+}
+ul.cls-pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+ul.cls-pagination li {
+    display: inline;
+}
+ul.cls-pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+ul.cls-pagination li a.active {
+    background-color:  #00537B;
+    color: white;
+    border: 1px solid  #00537B;
+}
+ul.cls-pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+/* FLIP DE LAS CARDS */
+.flip-card {
+    padding:0px;
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 2px 2px 4px 0px #888888;
+    perspective: 1000px;
+  }
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+.flip-card-back {
+    background-color: #bbb;
+    transform: rotateY(180deg);
+  }
+.cls-titulo-seccion{
+    margin: 30px 0px 0px 40px;
+    padding: 70px 0px 0px 20px;
+}
+
+.cls-titulo-seccion>p{
+    text-align: justify;
+}
+
+div>h4{
+    padding:30px 0px 0px 0px;
+    font-size:18px; /*Nombre*/
+  }
+div>h5{
+    padding:10px 0px 0px 0px;
+    font-size:14px;/*Autor*/
+  }
+div>h6{
+    padding:10px 0px 0px 0px;
+    font-size:14px; /*precio*/
+    color:red;
+  }
+
+  /* MAQUINA DE ESCRIBIR */
+.contenedor {
+	display: table;
+}
+
+.contenedor>h1 {
+	position: relative;
+	float: left;
+	background:#333333;
+	color: #fff;
+	font-size: 2.5em;
+}
+
+.contenedor>h1 span {
+    position:absolute;
+    right:0;
+    width:0;
+    background:#333333;
+    border-left: 1px solid white;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
+
+/* DEFINICION MEDIA QUERIES */
+@media (max-width: 576px) {
+    .cls-definicion-layout-grid{
+        grid-template-areas:
+        "nav"
+        "menu"
+        "section"
+        "footer";
+        grid-template-columns: auto;
+    }
+    .cls-display-item-menu{
+        margin:0px 0px 0px 0px;
+        padding:0px 0px 0px 0px;
+    }
+    /* .cls-ubica-primer-item{
+        padding-top:30px;
+    } */
+    .cls-titulo-seccion{
+        margin: 20px 0px 0px 40px;
+        padding: 10px 0px 0px 20px;
+    }
+    nav {
+        grid-area: nav;
+        background-color:#333333;
+        height: 30vh;
+        position: relative;
+    }
+    menu {
+        grid-area: menu;
+        background-color: #00599B;
+        height: auto;
+    }
+    section {
+        grid-area: section;
+        background-color: white;
+        height: auto;
+    }
+    footer {
+        grid-area: footer;
+        background-color:#00306C;
+        height: auto;
+    }
+    .cls-seccion-logo{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding:30px;
+    }
+    .cls-seccion-menu{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .cls-grid-container-productos {
+        display: grid;
+        grid-template-columns: 257px;
+        grid-gap: 10px;
+        background-color: white;
+        margin: 13px 30px 5px 30px;
+        padding: 0px 80px 0px 80px;
+    }
+}
